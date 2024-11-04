@@ -1,5 +1,7 @@
 package com.csc;
 
+import java.util.*;
+
 public class TriangleNumberCalculator {
   private int[] triangle_cache;
   
@@ -49,5 +51,25 @@ public class TriangleNumberCalculator {
   
   public int subtract(int n, int m) {
     return this.value(n) - this.value(m);
+  }
+  
+  public int multiply(int n, int m) {
+    return this.value(n) * this.value(m);
+  }
+  
+  public double divide(int n, int m) {
+    return ((double)this.value(n)) / ((double)this.value(m));
+  }
+  
+  public List<Integer> sequence(int n) {
+    if (n < 1) n = 1;
+    
+    ArrayList<Integer> return_list = new ArrayList<Integer>();
+    
+    for(int i = 1; i <= n; i++) {
+      return_list.add(this.value(i));
+    }
+    
+    return return_list;
   }
 }
